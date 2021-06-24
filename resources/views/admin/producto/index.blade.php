@@ -1,4 +1,4 @@
-@extends('layouts.vertical', ['title' => 'Empleados'])
+@extends('layouts.vertical', ['title' => 'Productos'])
 
 @section('css')
     <link href="{{asset('assets/libs/select2/select2.min.css')}}" rel="stylesheet" type="text/css" />
@@ -10,7 +10,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="page-title-box">
-                    <h4 class="page-title">Empleados</h4>
+                    <h4 class="page-title">Productos</h4>
                 </div>
             </div>
         </div>
@@ -31,19 +31,20 @@
                 </div>
             </div>
         </div>
-        <div class="row" id="tableEmpleados">
+        <div class="row" id="tableProductos">
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="header-title">Lista de Empleados</h4>
+                        <h4 class="header-title mb-4">Lista de Productos</h4>
                         <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
                             <thead>
                             <tr>
-                                <th>Nombres y Apellidos</th>
-                                <th>DNI</th>
-                                <th>Celular</th>
-                                <th>Correo</th>
-                                <th>Estado</th>
+                                <th>Código</th>
+                                <th>Nombre</th>
+                                <th>Und. de Medida</th>
+                                <th>Stock</th>
+                                <th>Precio Costo (Inc. IGV)</th>
+                                <th>Precio Venta (Inc. IGV)</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -106,17 +107,16 @@
                     var table = $('#datatable-buttons').DataTable({
                         destroy: true,
                         ajax: {
-                            url: '/api/admin/empleados/' + sucursal,
-                            dataSrc: 'empleados'
+                            url: '/api/admin/productos/' + sucursal,
+                            dataSrc: 'productos'
                         },
                         columns: [
-                            { data: function(row, type, set) {
-                                return row.Nombres + ' ' + row.Apellidos
-                            }},
-                            { data: 'DNI' },
-                            { data: 'Celular' },
-                            { data: 'Correo' },
-                            { data: 'Estado' },
+                            { data: 'codigo' },
+                            { data: 'nombre' },
+                            { data: 'unidad_de_medida' },
+                            { data: 'StockDisponibleConComprobante' },
+                            { data: 'PrecioCostoConIgv' },
+                            { data: 'PrecioConIgv' },
                         ],
                         lengthChange: false,
                         dom: 'Bfrtip',

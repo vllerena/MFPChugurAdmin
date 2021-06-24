@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\TableInfo\EmpresaTableInfo;
+use App\TableInfo\SucursalTableInfo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -25,6 +26,7 @@ class Empresa extends Model
 
     public function sucursales()
     {
-        return $this->hasMany(Sucursal::class);
+        return $this->hasMany(Sucursal::class, SucursalTableInfo::EMPRESA,
+            EmpresaTableInfo::ID);
     }
 }

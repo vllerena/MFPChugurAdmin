@@ -4,6 +4,7 @@
 namespace App\Services;
 
 
+use App\Models\Empresa;
 use App\Models\Sucursal;
 use App\Repository\SucursalRepository;
 use App\TableInfo\SucursalTableInfo;
@@ -14,6 +15,11 @@ class SucursalService implements SucursalRepository
     public function listar()
     {
         return Sucursal::all();
+    }
+
+    public function listarPorEmpresa(Empresa $empresa)
+    {
+        return Sucursal::where(SucursalTableInfo::EMPRESA, $empresa->id)->get();
     }
 
     public function crear(array $datos)

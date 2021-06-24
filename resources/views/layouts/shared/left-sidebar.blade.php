@@ -76,6 +76,35 @@
                         <span> Empleados </span>
                     </a>
                 </li>
+                <li>
+                    <a href="{{route('admin.producto.index')}}">
+                        <i data-feather="calendar"></i>
+                        <span> Productos </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{{route('admin.facturacion.index')}}">
+                        <i data-feather="calendar"></i>
+                        <span> Facturacion </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#sidebarReportes" data-toggle="collapse">
+                        <i data-feather="airplay"></i>
+                        <span> Reportes </span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <div class="collapse" id="sidebarReportes">
+                        <ul class="nav-second-level">
+                            <li>
+                                <a href="{{route('admin.reporte.general')}}">General</a>
+                            </li>
+                            <li>
+                                <a href="{{route('admin.reporte.ventas')}}">Ventas</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
         <div class="clearfix"></div>

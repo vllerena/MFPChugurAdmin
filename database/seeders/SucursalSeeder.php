@@ -225,5 +225,23 @@ class SucursalSeeder extends Seeder
             SucursalTableInfo::EMAIL => '',
             SucursalTableInfo::EMPRESA => 5,
         ]);
+
+        Sucursal::create([
+            SucursalTableInfo::NOMBRE => 'SUCURSAL MINKA',
+            SucursalTableInfo::URL => 'https://principal.mifacturaperu.com/',
+            SucursalTableInfo::DIRECCION => 'JR. DOS DE MAYO NRO. 576 CAJAMARCA - CAJAMARCA - CAJAMARCA',
+            SucursalTableInfo::TELEFONO => '',
+            SucursalTableInfo::EMAIL => '',
+            SucursalTableInfo::EMPRESA => 6,
+        ]);
+
+        Sucursal::create([
+            SucursalTableInfo::NOMBRE => 'SUCURSAL TAMBO',
+            SucursalTableInfo::URL => 'https://sucursal1.mifacturaperu.com/',
+            SucursalTableInfo::DIRECCION => 'AV. ARGENTINA NRO. 3093 INT. 227 (C.C. MINKA) PROV. CONST. DEL CALLAO',
+            SucursalTableInfo::TELEFONO => '',
+            SucursalTableInfo::EMAIL => '',
+            SucursalTableInfo::EMPRESA => 6,
+        ]);
     }
 }
